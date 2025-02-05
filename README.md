@@ -1,3 +1,6 @@
+### Set up dotfiles on a new machine:
+- `cd ~/projects && git clone git@github.com:kubk/dotfiles.git`
+
 ### Set up a new symlink example:
 
 - `mv ~/.vimrc ~/projects/dotfiles/.vimrc`
