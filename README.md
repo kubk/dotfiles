@@ -1,7 +1,7 @@
 ### Set up a new symlink example:
 
-- mv ~/.vimrc ~/projects/dotfiles/.vimrc
-- ln -s ~/projects/dotfiles/.vimrc ~/.vimrc
+- `mv ~/.vimrc ~/projects/dotfiles/.vimrc`
+- `ln -s ~/projects/dotfiles/.vimrc ~/.vimrc`
 
 ### Load aliases from both zsh and bash:
 
