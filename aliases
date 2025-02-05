@@ -1,0 +1,23 @@
+alias gaa='git add .'
+alias gch='git checkout'
+alias gc='git commit -m '
+alias gcnv='git commit --no-verify -m '
+alias gpl='git pull'
+alias gp='git push'
+alias gs='git status'
+alias gb='git branch --sort=-committerdate'
+alias c='clear'
+alias gl='git log --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s" --date=short'
+alias gd='git diff'
+alias gf='git fetch'
+alias grep='grep --color'
+alias tcfe="npm run typecheck -w=frontend"
+alias tsfe="npm run typecheck -w=frontend"
+alias tcbe="npm run typecheck -w=api"
+alias tsbe="npm run typecheck -w=api"
+alias tc="npm run typecheck"
+alias ts="npm run typecheck"
+alias ni="npm install"
+alias p="npm run prettier:fix"
+alias l="npm run lint"
+
