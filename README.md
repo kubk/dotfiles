@@ -1,6 +1,9 @@
 ### Set up dotfiles on a new machine:
 - `cd ~/projects && git clone git@github.com:kubk/dotfiles.git`
 
+### Set up scripts
+- `sudo ln -s ~/projects/dotfiles/ai-concat.sh /usr/local/bin/ai-concat.sh`
+
 ### Set up a new symlink example:
 
 - `mv ~/.vimrc ~/projects/dotfiles/.vimrc`
