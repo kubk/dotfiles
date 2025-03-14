@@ -2,7 +2,9 @@
 - `cd ~/projects && git clone git@github.com:kubk/dotfiles.git`
 
 ### Set up scripts
+- Make sure you have a `.env` file in your dotfiles directory with your OpenAI API key (see `.env.example` for format)
 - `sudo ln -s ~/projects/dotfiles/ai-concat.sh /usr/local/bin/ai-concat.sh`
+- Run clipboard grammar as `~/projects/dotfiles/clipboard-grammar.sh`
 
 ### Load aliases from both zsh and bash:
 
@@ -13,4 +15,7 @@
 - `mv ~/.vimrc ~/projects/dotfiles/.vimrc`
 - `ln -s ~/projects/dotfiles/.vimrc ~/.vimrc`
 
+### Set up Vimium
+
+- Hit `?` in Vim mode > Option > Custom key mappings > Insert the `vimium` file
 
