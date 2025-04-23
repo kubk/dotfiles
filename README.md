@@ -19,3 +19,12 @@
 
 - Hit `?` in Vim mode > Option > Custom key mappings > Insert the `vimium` file
 
+### VSCode
+
+#### Fix zoom
+
+- Open VS Code
+- Press Cmd+Shift+P (Mac), Type "Preferences: Open User Settings (JSON)" and select it
+- Add "window.zoomLevel": 2
+  
+
