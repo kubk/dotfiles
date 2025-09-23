@@ -3,17 +3,17 @@
 
 ### Set up scripts
 - Make sure you have a `.env` file in your dotfiles directory with your OpenAI API key (see `.env.example` for format)
-- `sudo ln -s ~/projects/dotfiles/ai-concat.sh /usr/local/bin/ai-concat.sh`
 - Run clipboard grammar as `~/projects/dotfiles/clipboard-grammar.sh`
 
 ### Load aliases from both zsh and bash:
 
 - Add `source ~/projects/dotfiles/aliases` to your `~/.zshrc` or `~/.bashrc`
 
-### Set up a new symlink example:
+### Set up a new symlinks:
 
 - `mv ~/.vimrc ~/projects/dotfiles/.vimrc`
 - `ln -s ~/projects/dotfiles/.vimrc ~/.vimrc`
+- `ln -s ~/projects/dotfiles/.claude/commands ~/.claude/commands`
 
 ### Set up Vimium
 
