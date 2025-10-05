@@ -12,11 +12,11 @@ alias gl='git log --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Cre
 alias gd='git diff'
 alias gf='git fetch'
 alias grep='grep --color'
-alias tcfe="npm run typecheck -w=frontend"
 alias tsfe="npm run typecheck -w=frontend"
-alias tcbe="npm run typecheck -w=api"
 alias tsbe="npm run typecheck -w=api"
 alias ts="npm run typecheck"
+alias tt="npm run test"
+alias ttbe="npm run test -w=api"
 alias ni="npm install"
 alias p="npm run prettier:fix"
 alias l="npm run lint"
@@ -25,3 +25,8 @@ alias cld="claude --dangerously-skip-permissions"
 alias cldc="claude --dangerously-skip-permissions --continue"
 alias cl="claude"
 alias clc="claude --continue"
+
+# Kill process on specified port
+killport() {
+  kill -9 $(lsof -ti:$1)
+}
