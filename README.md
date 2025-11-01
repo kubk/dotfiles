@@ -23,8 +23,9 @@
 
 #### Fix zoom
 
-- Open VS Code
-- Press Cmd+Shift+P (Mac), Type "Preferences: Open User Settings (JSON)" and select it
+- Press Cmd+Shift+P, Type "Preferences: Open User Settings (JSON)" and select it
 - Add "window.zoomLevel": 2
   
+#### Shortcut to maximize / minimize Terminal
 
+- Press Cmd+Shift+P, Type "Toggle Maximized Panel" and send Control+Shift+W as a shortcut
