@@ -28,4 +28,4 @@
   
 #### Shortcut to maximize / minimize Terminal
 
-- Press Cmd+Shift+P, Type "Toggle Maximized Panel" and send Control+Shift+W as a shortcut
+- Press Cmd+Shift+P, Type "Keyboard shorcuts" > "Toggle Maximized Panel" and send Control+Shift+W as a shortcut
