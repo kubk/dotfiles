@@ -10,23 +10,39 @@ alias c='clear'
 alias x='exit'
 alias gl='git log --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s" --date=short'
 alias gd='git diff'
-alias gf='git fetch'
 alias grep='grep --color'
 alias tsfe="npm run typecheck -w=frontend"
 alias tsbe="npm run typecheck -w=api"
 alias ts="npm run typecheck"
 alias tt="npm run test"
+alias ttfe="npm run test -w=frontend"
 alias ttbe="npm run test -w=api"
-alias ni="npm install"
 alias p="npm run prettier:fix"
 alias l="npm run lint"
-alias w="windsurf"
-alias cld="claude --dangerously-skip-permissions"
-alias cldc="claude --dangerously-skip-permissions --continue"
-alias cl="claude"
-alias clc="claude --continue"
+alias cl="claude --dangerously-skip-permissions"
+alias clc="claude --dangerously-skip-permissions --continue"
 
 # Kill process on specified port
 killport() {
   kill -9 $(lsof -ti:$1)
+}
+
+# DeepSeek Claude with environment overrides
+dcl() {
+  # Source .env file to get DEEP_SEEK_KEY
+  if [ -f "$HOME/projects/dotfiles/.env" ]; then
+    source "$HOME/projects/dotfiles/.env"
+    ANTHROPIC_AUTH_TOKEN="$DEEP_SEEK_KEY"
+  else
+    echo "Warning: .env file not found at $HOME/projects/dotfiles/.env"
+    return 1
+  fi
+
+  ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic \
+  ANTHROPIC_AUTH_TOKEN="$ANTHROPIC_AUTH_TOKEN" \
+  API_TIMEOUT_MS=600000 \
+  ANTHROPIC_MODEL=deepseek-chat \
+  ANTHROPIC_SMALL_FAST_MODEL=deepseek-chat \
+  CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 \
+  cld
 }
