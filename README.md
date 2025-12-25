@@ -19,6 +19,9 @@
 
 - Hit `?` in Vim mode > Option > Custom key mappings > Insert the `vimium` file
 
+### Git
+- `git config --global core.editor "vim"`
+
 ### VSCode
 
 #### Fix zoom
