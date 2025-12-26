@@ -21,6 +21,7 @@
 
 ### Git
 - `git config --global core.editor "vim"`
+- `git config --global push.autoSetupRemote true`
 
 ### VSCode
 
