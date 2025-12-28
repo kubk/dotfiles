@@ -43,5 +43,6 @@
 
 #### Disable Screen Reader sounds
 
-- Press Cmd+Shift+P, type 'Toggle Screen Reader Accessibility Mode' to avoid unwanted sounds
+- Press Cmd+Shift+P, Type "Preferences: Open User Settings (JSON)" and select it
+- Add `"editor.accessibilitySupport": "off"`
 
