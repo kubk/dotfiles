@@ -32,7 +32,7 @@
   
 #### Shortcut to maximize / minimize Terminal
 
-- Press Cmd+Shift+P, Type "Keyboard shorcuts" > "Toggle Maximized Panel" and send Control+Shift+W as a shortcut
+- Press Cmd+Shift+P, Type "Keyboard shorcuts" > "Toggle Maximized Panel" and send Cmd+Shift+W as a shortcut
 
 ### Run VSCode from terminal
 - `Cmd + Shift + P`, type 'Install', select 'Install 'code' command in PATH'
@@ -40,4 +40,8 @@
 #### Make Shift+Enter work with Claude Code
 
 - Run Claude inside VSCode terminal, then `/terminal-setup`
+
+#### Disable Screen Reader sounds
+
+- Press Cmd+Shift+P, type 'Toggle Screen Reader Accessibility Mode' to avoid unwanted sounds
 
