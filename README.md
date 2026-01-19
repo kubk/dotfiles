@@ -46,3 +46,7 @@
 - Press Cmd+Shift+P, Type "Preferences: Open User Settings (JSON)" and select it
 - Add `"editor.accessibilitySupport": "off"`
 
+#### Enable Confirm Before Close
+
+- Cmd+, then type "Window close" > Always
+
