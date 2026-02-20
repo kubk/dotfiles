@@ -19,8 +19,11 @@ alias ttfe="npm run test -w=frontend"
 alias ttbe="npm run test -w=api"
 alias p="npm run prettier:fix"
 alias l="npm run lint"
-alias cl="claude --dangerously-skip-permissions"
-alias clc="claude --dangerously-skip-permissions --continue"
+alias claude="claude --dangerously-skip-permissions"
+alias cl="claude"
+alias clc="claude --continue"
+alias clr="cl --resume"
+alias clhr='cl "/handoff:resume"'
 
 # Kill process on specified port
 killport() {

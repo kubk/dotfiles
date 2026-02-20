@@ -6,6 +6,7 @@ Commit all changes with a short commit message and push to current branch:
 4. Create a concise 1-sentence commit message that captures the primary purpose of the changes
    - If multiple unrelated changes exist, mention the most important one
    - Don't base the message only on recent session context - analyze the actual diff
+   - Do NOT use conventional commit prefixes like fix:, feat:, chore:, refactor:, etc.
 5. Commit the changes
 6. Push to the current branch via `git push`
 
