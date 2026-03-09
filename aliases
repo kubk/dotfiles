@@ -20,10 +20,10 @@ alias ttbe="npm run test -w=api"
 alias p="npm run prettier:fix"
 alias v="vim"
 alias claude="claude --dangerously-skip-permissions"
-alias cl="claude"
-alias clc="claude --continue"
-alias clr="cl --resume"
-alias clhr='cl "/handoff:resume"'
+alias cc="claude"
+alias ccc="claude --continue"
+alias ccr="cc --resume"
+alias cchr='cc "/handoff:resume"'
 
 # Kill process on specified port
 killport() {
@@ -47,5 +47,5 @@ dcl() {
   ANTHROPIC_MODEL=deepseek-chat \
   ANTHROPIC_SMALL_FAST_MODEL=deepseek-chat \
   CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 \
-  cl
+  cc
 }
