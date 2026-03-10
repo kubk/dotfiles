@@ -38,7 +38,7 @@ cmux browser --surface surface:2 url
 cmux browser open https://example.com
 cmux browser open-split https://news.ycombinator.com
 
-cmux browser surface:2 navigate https://example.org/docs --snapshot-after
+cmux browser surface:2 navigate https://example.org/docs
 cmux browser surface:2 back
 cmux browser surface:2 forward
 cmux browser surface:2 reload --snapshot-after
@@ -248,6 +248,7 @@ cmux browser surface:2 reload
 ## Tips and Gotchas
 
 - **Do NOT use Chrome DevTools MCP tools** — use `cmux browser` commands via Bash instead.
+- **NEVER use `--snapshot-after` on commands that include a URL** — it is broken and opens Google instead. Use a separate `snapshot` command after the action if you need to inspect state.
 - **Save the surface ID** from `cmux browser open` (e.g. `surface:89`) and use it in all subsequent commands.
 - **`snapshot` only sees DOM text and interactive elements** — it cannot see canvas content, SVG visuals, Rive animations, Lottie animations, WebGL, or any visually-rendered content. Use `snapshot` for text-heavy pages and form interactions.
 - **Use `screenshot` for visual content** — always prefer `screenshot --out /tmp/file.png` (then read the image) when inspecting canvas, SVG, animations (Rive, Lottie), games, or any page where the visual output matters more than DOM structure. Combine with `get` commands (`get title`, `get url`, `get text`) for specific data.
