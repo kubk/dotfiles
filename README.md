@@ -15,6 +15,12 @@
 - `ln -s ~/projects/dotfiles/.vimrc ~/.vimrc`
 - `ln -s ~/projects/dotfiles/.claude/commands ~/.claude/commands`
 
+### Codex skills
+
+- Store custom Codex skills in `~/projects/dotfiles/.codex/skills/<skill-name>`
+- Sync them into Codex with `~/projects/dotfiles/.codex/link-skills.sh`
+- This links custom skills into `~/.codex/skills` without replacing Codex's built-in `.system` skills
+
 ### Set up Vimium
 
 - Hit `?` in Vim mode > Option > Custom key mappings > Insert the `vimium` file
@@ -49,4 +55,3 @@
 #### Enable Confirm Before Close
 
 - Cmd+, then type "Window close" > Always
-
