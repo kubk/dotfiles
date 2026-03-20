@@ -1,0 +1,4 @@
+interface:
+  display_name: "Exhaustive Checks"
+  short_description: "TypeScript switch exhaustiveness"
+  default_prompt: "Use the exhaustive checks skill. Prefer `satisfies never` in the default case of TypeScript switches over discriminated unions, enums, and string literal unions."
