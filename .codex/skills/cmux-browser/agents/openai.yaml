@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cmux Browser"
+  short_description: "Browser automation via cmux CLI"
+  default_prompt: "Use the cmux-browser skill. Drive browser automation through `cmux browser` commands, keep the surface ID stable, wait for load completion after navigation, and prefer screenshots when visual rendering matters."

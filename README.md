@@ -20,6 +20,7 @@
 - Store custom Codex skills in `~/projects/dotfiles/.codex/skills/<skill-name>`
 - Sync them into Codex with `~/projects/dotfiles/.codex/link-skills.sh`
 - This links custom skills into `~/.codex/skills` without replacing Codex's built-in `.system` skills
+- Current custom skills in this repo: `cmux-browser` and `exhaustive-checks`
 
 ### Set up Vimium
 

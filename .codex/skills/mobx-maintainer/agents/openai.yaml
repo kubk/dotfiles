@@ -1,4 +1,0 @@
-interface:
-  display_name: "MobX Maintainer"
-  short_description: "Maintain MobX"
-  default_prompt: "Use the MobX maintainer workflow. For clean checkouts or new worktrees, bootstrap build artifacts once with `yarn lerna run build:test` before changing test flow"
