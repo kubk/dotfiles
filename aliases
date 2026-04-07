@@ -20,17 +20,15 @@ alias ttbe="npm run test -w=api"
 alias p="npm run prettier:fix"
 alias v="vim"
 alias d="npm run dev"
+
 alias co="codex --yolo"
+alias cof="codex --yolo -m gpt-5.3-codex-spark -c model_reasoning_effort="xhigh""
+alias cor="codex resume --yolo"
+
 alias claude="claude --dangerously-skip-permissions"
 alias cc="claude"
 alias ccc="claude --continue"
 alias ccr="cc --resume"
-alias cchr='cc "/handoff:resume"'
-
-# Kill process on specified port
-killport() {
-  kill -9 $(lsof -ti:$1)
-}
 
 # DeepSeek Claude with environment overrides
 dcl() {
