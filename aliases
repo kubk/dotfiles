@@ -23,6 +23,7 @@ alias d="npm run dev"
 
 alias co="codex --yolo"
 alias cof="codex --yolo -m gpt-5.3-codex-spark -c model_reasoning_effort="xhigh""
+alias com="codex --yolo -m gpt-5.4 -c model_reasoning_effort="high""
 alias cor="codex resume --yolo"
 
 alias claude="claude --dangerously-skip-permissions"
