@@ -14,7 +14,7 @@ alias grep='grep --color'
 alias tsfe="npm run typecheck -w=frontend"
 alias tsbe="npm run typecheck -w=api"
 alias ts="npm run typecheck"
-alias tt="npm run test"
+alias t="npm run test"
 alias ttfe="npm run test -w=frontend"
 alias ttbe="npm run test -w=api"
 alias k='npm run knip'
