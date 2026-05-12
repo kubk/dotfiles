@@ -52,3 +52,45 @@ dcl() {
   CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 \
   cc
 }
+
+_deepseek_claude_env() {
+  if [ -f "$HOME/projects/dotfiles/.env" ]; then
+    source "$HOME/projects/dotfiles/.env"
+  else
+    echo "Warning: .env file not found at $HOME/projects/dotfiles/.env"
+    return 1
+  fi
+
+  if [ -z "$DEEP_SEEK_KEY" ]; then
+    echo "Warning: DEEP_SEEK_KEY is not set in $HOME/projects/dotfiles/.env"
+    return 1
+  fi
+}
+
+ccp() {
+  _deepseek_claude_env || return 1
+
+  ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic \
+  ANTHROPIC_AUTH_TOKEN="$DEEP_SEEK_KEY" \
+  ANTHROPIC_MODEL=deepseek-v4-pro \
+  ANTHROPIC_DEFAULT_OPUS_MODEL=deepseek-v4-pro \
+  ANTHROPIC_DEFAULT_SONNET_MODEL=deepseek-v4-pro \
+  ANTHROPIC_DEFAULT_HAIKU_MODEL=deepseek-v4-flash \
+  CLAUDE_CODE_SUBAGENT_MODEL=deepseek-v4-flash \
+  CLAUDE_CODE_EFFORT_LEVEL=max \
+  cc "$@"
+}
+
+ccf() {
+  _deepseek_claude_env || return 1
+
+  ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic \
+  ANTHROPIC_AUTH_TOKEN="$DEEP_SEEK_KEY" \
+  ANTHROPIC_MODEL=deepseek-v4-flash \
+  ANTHROPIC_DEFAULT_OPUS_MODEL=deepseek-v4-flash \
+  ANTHROPIC_DEFAULT_SONNET_MODEL=deepseek-v4-flash \
+  ANTHROPIC_DEFAULT_HAIKU_MODEL=deepseek-v4-flash \
+  CLAUDE_CODE_SUBAGENT_MODEL=deepseek-v4-flash \
+  CLAUDE_CODE_EFFORT_LEVEL=max \
+  cc "$@"
+}
