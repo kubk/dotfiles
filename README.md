@@ -56,3 +56,16 @@
 #### Enable Confirm Before Close
 
 - Cmd+, then type "Window close" > Always
+
+### Raycast app hotkeys
+
+- Disable/override default macOS shortcut
+  - `System Settings > Keyboard > Keyboard Shortcuts > Window > Minimize` → re-assign `Cmd+M` to an impossible shortcut
+- Main app shortcuts
+  - `Cmd+G` → Google Chrome
+  - `Cmd+M` → Cmux
+  - `Cmd+T` → Telegram
+- To set this in Raycast
+  - Open settings with `Cmd+,`
+  - Go to **Extensions**
+  - Find the app extension and set the desired key in **Hotkey**
