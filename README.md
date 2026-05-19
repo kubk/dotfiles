@@ -13,7 +13,6 @@
 
 - `mv ~/.vimrc ~/projects/dotfiles/.vimrc`
 - `ln -s ~/projects/dotfiles/.vimrc ~/.vimrc`
-- `ln -s ~/projects/dotfiles/.claude/commands ~/.claude/commands`
 
 ### Codex skills
 
@@ -29,33 +28,6 @@
 ### Git
 - `git config --global core.editor "vim"`
 - `git config --global push.autoSetupRemote true`
-
-### VSCode
-
-#### Fix zoom
-
-- Press Cmd+Shift+P, Type "Preferences: Open User Settings (JSON)" and select it
-- Add "window.zoomLevel": 2
-  
-#### Shortcut to maximize / minimize Terminal
-
-- Press Cmd+Shift+P, Type "Keyboard shorcuts" > "Toggle Maximized Panel" and send Cmd+Shift+W as a shortcut
-
-### Run VSCode from terminal
-- `Cmd + Shift + P`, type 'Install', select 'Install 'code' command in PATH'
-
-#### Make Shift+Enter work with Claude Code
-
-- Run Claude inside VSCode terminal, then `/terminal-setup`
-
-#### Disable Screen Reader sounds
-
-- Press Cmd+Shift+P, Type "Preferences: Open User Settings (JSON)" and select it
-- Add `"editor.accessibilitySupport": "off"`
-
-#### Enable Confirm Before Close
-
-- Cmd+, then type "Window close" > Always
 
 ### Raycast app hotkeys
 
