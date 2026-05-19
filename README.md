@@ -63,8 +63,9 @@
   - `System Settings > Keyboard > Keyboard Shortcuts > Window > Minimize` → re-assign `Cmd+M` to an impossible shortcut
 - Main app shortcuts
   - `Cmd+G` → Google Chrome
+  - `Cmd+E` → Telegram
   - `Cmd+M` → Cmux
-  - `Cmd+T` → Telegram
+  - `Cmd+E` → Apple Notes
 - To set this in Raycast
   - Open settings with `Cmd+,`
   - Go to **Extensions**
