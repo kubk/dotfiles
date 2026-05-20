@@ -5,6 +5,10 @@
 - Make sure you have a `.env` file in your dotfiles directory with your OpenAI API key (see `.env.example` for format)
 - Run clipboard grammar as `~/projects/dotfiles/clipboard-grammar.sh`
 
+### Set up npm
+
+- `npm config set ignore-scripts true --global`
+
 ### Load aliases from both zsh and bash:
 
 - Add `source ~/projects/dotfiles/aliases` to your `~/.zshrc` or `~/.bashrc`
