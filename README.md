@@ -2,7 +2,7 @@
 - `cd ~/projects && git clone git@github.com:kubk/dotfiles.git`
 
 ### Set up scripts
-- Make sure you have a `.env` file in your dotfiles directory with your OpenAI API key (see `.env.example` for format)
+- Make sure you have a `.env` file in your dotfiles directory with your Vercel AI Gateway API key (see `.env.example` for format)
 - Run clipboard grammar as `~/projects/dotfiles/clipboard-grammar.sh`
 
 ### Set up npm
