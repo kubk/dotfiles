@@ -43,6 +43,8 @@ if [[ -z "$pids" ]]; then
   exit 0
 fi
 
+count="$(wc -l <<< "$pids" | tr -d ' ')"
+
 echo "$pids" | xargs kill -TERM 2>/dev/null || true
 sleep 1
 
@@ -58,4 +60,4 @@ if [[ -n "$survivors" ]]; then
   kill -KILL $survivors 2>/dev/null || true
 fi
 
-echo "Killed chrome-devtools-mcp process trees."
+echo "Killed $count chrome-devtools-mcp process(es)."
