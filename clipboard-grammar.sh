@@ -2,8 +2,9 @@
 
 set -u
 
-# Get the directory where the script is located
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# Resolve symlinks so the config is loaded beside the real script, not its launcher.
+SCRIPT_PATH="$(realpath "${BASH_SOURCE[0]}")"
+SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_PATH")" && pwd)"
 
 # Load environment variables from .env file
 if [ -f "$SCRIPT_DIR/.env" ]; then

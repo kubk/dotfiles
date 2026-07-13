@@ -20,7 +20,8 @@ alias l="npm run lint"
 alias ttfe="npm run test -w=frontend"
 alias ttbe="npm run test -w=api"
 alias k='npm run knip'
-alias f="npm run format"
+alias fo="npm run format"
+alias p="pnpm"
 alias v="vim"
 alias d="npm run dev"
 
