@@ -23,7 +23,18 @@ alias k='npm run knip'
 alias fo="npm run format"
 alias p="pnpm"
 alias v="vim"
-alias d="npm run dev"
+d() {
+  if [ ! -f package.json ]; then
+    echo "d: no package.json in the current directory" >&2
+    return 1
+  fi
+
+  if [ -f pnpm-lock.yaml ] || grep -q '"packageManager"[[:space:]]*:[[:space:]]*"pnpm@' package.json; then
+    pnpm dev
+  else
+    npm run dev
+  fi
+}
 
 alias co='codex --yolo -m gpt-5.6-sol -c model_reasoning_effort=xhigh'
 alias cou='codex --yolo -m gpt-5.6-sol -c model_reasoning_effort=ultra'
