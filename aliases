@@ -12,29 +12,42 @@ alias gl='git log --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Cre
 alias gd='git diff'
 alias h='hunk diff'
 alias grep='grep --color'
+
+pm() {
+  local package_directory="$PWD"
+
+  while [ "$package_directory" != "/" ]; do
+    if [ -f "$package_directory/pnpm-lock.yaml" ] ||
+      { [ -f "$package_directory/package.json" ] && grep -q '"packageManager"[[:space:]]*:[[:space:]]*"pnpm@' "$package_directory/package.json"; }; then
+      command pnpm "$@"
+      return
+    fi
+
+    if [ -f "$package_directory/package-lock.json" ] ||
+      { [ -f "$package_directory/package.json" ] && grep -q '"packageManager"[[:space:]]*:[[:space:]]*"npm@' "$package_directory/package.json"; }; then
+      command npm "$@"
+      return
+    fi
+
+    package_directory=${package_directory%/*}
+    [ -n "$package_directory" ] || package_directory="/"
+  done
+
+  command npm "$@"
+}
+
 alias tsfe="npm run typecheck -w=frontend"
 alias tsbe="npm run typecheck -w=api"
-alias ts="npm run typecheck"
-alias t="npm run test"
-alias l="npm run lint"
+alias ts="pm run typecheck"
+alias t="pm run test"
+alias l="pm run lint"
 alias ttfe="npm run test -w=frontend"
 alias ttbe="npm run test -w=api"
-alias k='npm run knip'
-alias fo="npm run format"
+alias k='pm run knip'
+alias fo="pm run format"
 alias p="pnpm"
 alias v="vim"
-d() {
-  if [ ! -f package.json ]; then
-    echo "d: no package.json in the current directory" >&2
-    return 1
-  fi
-
-  if [ -f pnpm-lock.yaml ] || grep -q '"packageManager"[[:space:]]*:[[:space:]]*"pnpm@' package.json; then
-    pnpm dev
-  else
-    npm run dev
-  fi
-}
+alias d="pm run dev"
 
 alias co='codex --yolo -m gpt-5.6-sol -c model_reasoning_effort=xhigh'
 alias cou='codex --yolo -m gpt-5.6-sol -c model_reasoning_effort=ultra'
