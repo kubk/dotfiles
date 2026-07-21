@@ -25,6 +25,10 @@
 - This links custom skills into `~/.codex/skills` without replacing Codex's built-in `.system` skills
 - Current custom skills in this repo: `cmux-browser` and `exhaustive-checks`
 
+### Cmux
+
+- Press `Cmd+Shift+P`, search for **Show Listening Ports in Sidebar**, and toggle it off
+
 ### Set up Vimium
 
 - Hit `?` in Vim mode > Option > Custom key mappings > Insert the `vimium` file
