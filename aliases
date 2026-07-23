@@ -57,6 +57,10 @@ alias comax='codex --yolo -m gpt-5.6-sol -c model_reasoning_effort=max'
 alias cor="codex resume --yolo"
 alias update-codex="npm install -g @openai/codex@latest --min-release-age=0"
 
+cochrome() {
+  codex -c 'mcp_servers.chrome-devtools={command="npx",args=["-y","chrome-devtools-mcp@0.19.0","--isolated","--no-usage-statistics"]}' "$@"
+}
+
 alias claude="claude --dangerously-skip-permissions"
 alias cc="claude"
 alias ccc="claude --continue"
