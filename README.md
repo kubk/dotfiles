@@ -37,6 +37,10 @@ ln -s ~/projects/dotfiles/kill-all-mcp.sh ~/.local/bin/kill-all-mcp.sh
 
 - Press `Cmd+Shift+P`, search for **Show Listening Ports in Sidebar**, and toggle it off
 
+### Spotlight
+
+- Exclude `~/projects` from indexing in **System Settings → Spotlight → Search Privacy**
+
 ### Set up Vimium
 
 - Hit `?` in Vim mode > Option > Custom key mappings > Insert the `vimium` file
