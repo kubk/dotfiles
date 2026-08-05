@@ -2,8 +2,16 @@
 - `cd ~/projects && git clone git@github.com:kubk/dotfiles.git`
 
 ### Set up scripts
+
 - Make sure you have a `.env` file in your dotfiles directory with your Vercel AI Gateway API key (see `.env.example` for format)
 - Run clipboard grammar as `~/projects/dotfiles/clipboard-grammar.sh`
+- Make the MCP cleanup scripts globally available:
+
+```sh
+ln -s ~/projects/dotfiles/kill-chrome-mcp.sh ~/.local/bin/kill-chrome-mcp.sh
+ln -s ~/projects/dotfiles/kill-pg-mcp.sh ~/.local/bin/kill-pg-mcp.sh
+ln -s ~/projects/dotfiles/kill-all-mcp.sh ~/.local/bin/kill-all-mcp.sh
+```
 
 ### Set up npm
 
