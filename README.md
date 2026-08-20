@@ -25,6 +25,28 @@ ln -s ~/projects/dotfiles/kill-all-mcp.sh ~/.local/bin/kill-all-mcp.sh
 
 - `mv ~/.vimrc ~/projects/dotfiles/.vimrc`
 - `ln -s ~/projects/dotfiles/.vimrc ~/.vimrc`
+- `mkdir -p ~/.config`
+- `ln -s ~/projects/dotfiles/.config/nvim ~/.config/nvim`
+
+### Neovim
+
+Install these before using the Neovim config:
+
+- `@vtsls/language-server` installed globally with npm
+- `fzf` and `ripgrep`
+- `lazy.nvim` at `~/.local/share/nvim/lazy/lazy.nvim`
+
+`lazy-lock.json` pins and installs the editor plugins, but it cannot install
+Neovim, command-line tools, the TypeScript language server, or `lazy.nvim`
+itself.
+
+- `Space e` → toggle the file tree
+- `Ctrl+h` → move to the file tree / left window
+- `Ctrl+l` → move to the editor / right window
+- `Space p` → fuzzy-search all project files (`.gitignore` is respected)
+- In insert mode, `Tab` → select/accept an autocomplete suggestion
+- In insert mode, `Shift+Tab` → move backward through snippet placeholders
+- In insert mode, `Ctrl+Space` → manually open autocomplete or documentation
 
 ### Codex skills
 

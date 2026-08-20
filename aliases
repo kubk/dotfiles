@@ -47,6 +47,7 @@ alias k='pm run knip'
 alias fo="pm run format"
 alias p="pnpm"
 alias v="vim"
+alias n="nvim"
 alias d="pm run dev"
 
 alias co='codex --yolo -m gpt-5.6-sol -c model_reasoning_effort=xhigh'
