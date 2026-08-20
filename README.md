@@ -33,17 +33,21 @@ ln -s ~/projects/dotfiles/kill-all-mcp.sh ~/.local/bin/kill-all-mcp.sh
 Install these before using the Neovim config:
 
 - `@vtsls/language-server` installed globally with npm
-- `fzf` and `ripgrep`
 - `lazy.nvim` at `~/.local/share/nvim/lazy/lazy.nvim`
 
 `lazy-lock.json` pins and installs the editor plugins, but it cannot install
 Neovim, command-line tools, the TypeScript language server, or `lazy.nvim`
 itself.
 
-- `Space e` → toggle the file tree
+- `Space e` → reveal the current file in the tree; from inside the tree, close it
 - `Ctrl+h` → move to the file tree / left window
 - `Ctrl+l` → move to the editor / right window
-- `Space p` → fuzzy-search all project files (`.gitignore` is respected)
+- `Space p` → fuzzy-search all project files with `fff` (`.gitignore` is respected)
+- `gd` or `Ctrl+]` → go to the definition and center it on screen
+- `grr` → show all usages in the quickfix window
+- `Ctrl+o` → jump back
+- `Ctrl+i` → jump forward
+- In visual mode, `Cmd+C` → copy the selection to the macOS clipboard
 - In insert mode, `Tab` → select/accept an autocomplete suggestion
 - In insert mode, `Shift+Tab` → move backward through snippet placeholders
 - In insert mode, `Ctrl+Space` → manually open autocomplete or documentation
