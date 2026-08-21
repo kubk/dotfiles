@@ -61,7 +61,15 @@ itself.
 
 ### Cmux
 
+Set up:
 - Press `Cmd+Shift+P`, search for **Show Listening Ports in Sidebar**, and toggle it off
+
+Shortcuts:
+- `Cmd+D` → open a new pane on the right
+- `Cmd+T` → open a new surface/tab inside the current pane
+- `Cmd+B` → toggle the sidebar
+- `Cmd+Shift+[` / `Cmd+Shift+]` → switch to the previous/next surface
+- `Cmd+Shift+U` → jump to the latest unread notification
 
 ### Spotlight
 
