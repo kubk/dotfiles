@@ -39,7 +39,7 @@ pids="$(
 )"
 
 if [[ -z "$pids" ]]; then
-  echo "No chrome-devtools-mcp processes found."
+  echo "No chrome-devtools-mcp processes found"
   exit 0
 fi
 
@@ -60,4 +60,4 @@ if [[ -n "$survivors" ]]; then
   kill -KILL $survivors 2>/dev/null || true
 fi
 
-echo "Killed $count chrome-devtools-mcp process(es)."
+echo "Killed $count chrome-devtools-mcp process(es)"

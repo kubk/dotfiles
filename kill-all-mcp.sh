@@ -15,5 +15,5 @@ for script in "$script_dir"/kill-*-mcp.sh; do
 done
 
 if [[ "$found" == false ]]; then
-  echo "No MCP cleanup scripts found."
+  echo "No MCP cleanup scripts found"
 fi

@@ -1,1 +1,2 @@
 - never use conventional git prefixes like fix: docs:, search existing commit names before generating commit title
+- do not end user-facing labels with periods
