@@ -27,6 +27,15 @@ ln -s ~/projects/dotfiles/kill-all-mcp.sh ~/.local/bin/kill-all-mcp.sh
 - `ln -s ~/projects/dotfiles/.vimrc ~/.vimrc`
 - `mkdir -p ~/.config`
 - `ln -s ~/projects/dotfiles/.config/nvim ~/.config/nvim`
+- `brew install --cask hammerspoon`
+- `ln -s ~/projects/dotfiles/.hammerspoon ~/.hammerspoon`
+
+### Hammerspoon
+
+- Enable Hammerspoon in **System Settings → Privacy & Security → Accessibility**
+- Enable **Launch Hammerspoon at login** in Hammerspoon settings
+- In Apple Mail, `Cmd+V` pastes text without source formatting while images and files use normal paste
+- Hammerspoon does not override shortcuts outside Apple Mail
 
 ### Neovim
 
