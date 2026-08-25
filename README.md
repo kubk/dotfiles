@@ -1,4 +1,7 @@
-### Set up dotfiles on a new machine:
+# macOS dotfiles
+
+### Set up dotfiles on a new Mac
+
 - `cd ~/projects && git clone git@github.com:kubk/dotfiles.git`
 
 ### Set up scripts
@@ -17,9 +20,9 @@ ln -s ~/projects/dotfiles/kill-all-mcp.sh ~/.local/bin/kill-all-mcp.sh
 
 - `npm config set ignore-scripts true --global`
 
-### Load aliases from both zsh and bash:
+### Load aliases in zsh
 
-- Add `source ~/projects/dotfiles/aliases` to your `~/.zshrc` or `~/.bashrc`
+- Add `source ~/projects/dotfiles/aliases` to your `~/.zshrc`
 
 ### Set up a new symlinks:
 
