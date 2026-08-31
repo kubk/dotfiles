@@ -103,7 +103,8 @@ Shortcuts:
   - `Cmd+G` → Google Chrome
   - `Cmd+E` → Telegram
   - `Cmd+M` → Cmux
-  - `Cmd+E` → Apple Notes
+  - `Cmd+I` → ChatGPT
+  - `Cmd+O` → Apple Notes
 - To set this in Raycast
   - Open settings with `Cmd+,`
   - Go to **Extensions**
