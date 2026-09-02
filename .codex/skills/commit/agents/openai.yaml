@@ -1,0 +1,4 @@
+interface:
+  display_name: "Commit"
+  short_description: "Commit current changes without prefixes"
+  default_prompt: "Use the commit skill to commit the current changes"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Commit and Push"
+  short_description: "Commit and push current changes"
+  default_prompt: "Use the commit-push skill to commit and push the current changes"

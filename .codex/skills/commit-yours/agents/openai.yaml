@@ -1,0 +1,4 @@
+interface:
+  display_name: "Commit Yours"
+  short_description: "Commit only your session changes"
+  default_prompt: "Use the commit-yours skill to commit only the changes you made in this session"
