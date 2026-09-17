@@ -76,7 +76,7 @@ alias ccr="claude --resume"
 DEEPSEEK_PRO=deepseek-v4-pro
 DEEPSEEK_FLASH=deepseek-flash
 
-_deepseek_claude_env() {
+_deepseek_env() {
   if [ -f "$HOME/projects/dotfiles/.env" ]; then
     source "$HOME/projects/dotfiles/.env"
   else
@@ -92,7 +92,7 @@ _deepseek_claude_env() {
 
 # _dsc <model> <effort> [extra claude args...]
 _dsc() {
-  _deepseek_claude_env || return 1
+  _deepseek_env || return 1
   local model="$1" effort="$2"
   shift 2
 
@@ -112,3 +112,24 @@ _dsc() {
 cc()  { _dsc "$DEEPSEEK_PRO" max "$@"; }    # smartest — V4 Pro, max effort
 ccm() { _dsc "$DEEPSEEK_PRO" high "$@"; }   # medium — V4 Pro, high effort
 ccf() { _dsc "$DEEPSEEK_FLASH" low "$@"; }  # fast — V4 Flash, low effort
+
+# DeepSeek-backed Codex — same models/key as cc/ccm/ccf, but routed through Codex.
+# Requires the `[model_providers.deepseek]` block + `model_catalog_json` in
+# ~/.codex/config.toml (already wired up). Key is read from DEEP_SEEK_KEY via env_key.
+# _dsx <model> <effort> [extra codex args...]
+_dsx() {
+  _deepseek_env || return 1
+  local model="$1" effort="$2"
+  shift 2
+
+  DEEP_SEEK_KEY="$DEEP_SEEK_KEY" \
+  command codex --yolo \
+    -m "$model" \
+    -c 'model_provider="deepseek"' \
+    -c "model_reasoning_effort=\"$effort\"" \
+    "$@"
+}
+
+dco()  { _dsx "$DEEPSEEK_PRO" max "$@"; }   # smartest — V4 Pro, max effort
+dcom() { _dsx "$DEEPSEEK_PRO" high "$@"; }  # medium — V4 Pro, high effort
+dcof() { _dsx "$DEEPSEEK_FLASH" low "$@"; } # fast — V4 Flash, low effort
