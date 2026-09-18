@@ -39,9 +39,13 @@ require("lazy").setup({
       require("nvim-tree").setup({
         hijack_directories = { enable = true, auto_open = true },
         sync_root_with_cwd = true,
-        view = { side = "left", width = 32 },
+        view = {
+          side = "left",
+          width = 32,
+          preserve_window_proportions = true,
+        },
         renderer = { group_empty = true },
-        actions = { open_file = { resize_window = false } },
+        actions = { open_file = { resize_window = true } },
       })
     end,
   },
