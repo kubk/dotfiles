@@ -18,7 +18,6 @@ else
 fi
 
 AI_GATEWAY_BASE_URL="https://ai-gateway.vercel.sh/v1"
-AI_GATEWAY_MODEL="openai/gpt-4o-mini"
 
 show_error() {
     osascript -e "display notification \"$1\" with title \"Grammar Fix Error\" sound name \"Basso\""
@@ -37,14 +36,16 @@ if [ -z "$selected_text" ]; then
     show_error "No text selected"
 fi
 
-system_prompt="You are a copy editor. Rewrite the text into natural English by fixing grammar, spelling, and word choice mistakes. Preserve the meaning and informal tone. Do not use advanced punctuation or abbreviations. Return only the fixed text."
+system_prompt="You are a light-touch English copy editor. Correct only grammar, spelling, punctuation, and clearly incorrect word choices. Preserve the exact meaning, every sentence, informal tone, contractions, line breaks, capitalization, and formatting. Do not add, remove, summarize, or explain anything. Return only the corrected text, without quotes or markup."
 request_body=$(jq -n \
-    --arg model "$AI_GATEWAY_MODEL" \
     --arg system_prompt "$system_prompt" \
     --arg selected_text "$selected_text" \
     '{
-        model: $model,
-        temperature: 0,
+        model: "deepseek/deepseek-v4-flash-0731",
+        max_tokens: 2048,
+        reasoning: {
+            effort: "none"
+        },
         messages: [
             {
                 role: "system",
@@ -52,13 +53,18 @@ request_body=$(jq -n \
             },
             {
                 role: "user",
-                content: $selected_text
+                content: ("<text>\n" + $selected_text + "\n</text>")
             }
-        ]
+        ],
+        providerOptions: {
+            gateway: {
+                sort: "ttft"
+            }
+        }
     }')
 
 # Make API call through Vercel AI Gateway's OpenAI-compatible API
-response=$(curl -sS -w '\n%{http_code}' "$AI_GATEWAY_BASE_URL/chat/completions" \
+response=$(curl -sS --connect-timeout 5 --max-time 30 -w '\n%{http_code}' "$AI_GATEWAY_BASE_URL/chat/completions" \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
     -d "$request_body")
