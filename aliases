@@ -47,7 +47,8 @@ alias k='pm run knip'
 alias fo="pm run format"
 alias p="pnpm"
 alias v="vim"
-alias n="nvim ."
+alias n="nvim"
+alias nn="nvim ."
 alias d="pm run dev"
 
 alias co='codex --yolo -m gpt-6-astra -c model_reasoning_effort=xhigh'
@@ -55,12 +56,9 @@ alias cou='codex --yolo -m gpt-6-astra -c model_reasoning_effort=ultra'
 alias cof='codex --yolo -m gpt-6-astra -c model_reasoning_effort=low'
 alias com='codex --yolo -m gpt-6-astra -c model_reasoning_effort=medium'
 alias comax='codex --yolo -m gpt-6-astra -c model_reasoning_effort=max'
+alias col='codex --yolo -m gpt-5.6-luna -c model_reasoning_effort=max'
 alias cor="codex resume --yolo"
 alias update-codex="npm install -g @openai/codex@latest --min-release-age=0"
-
-cochrome() {
-  codex -c 'mcp_servers.chrome-devtools={command="npx",args=["-y","chrome-devtools-mcp@0.19.0","--isolated","--no-usage-statistics"]}' "$@"
-}
 
 alias claude="claude --dangerously-skip-permissions"
 alias ccc="claude --continue"

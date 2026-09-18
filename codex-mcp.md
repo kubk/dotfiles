@@ -2,21 +2,6 @@
 
 Use `config.toml` for Codex MCP config.
 
-## Opt-in Chrome MCP
-
-Keep Chrome out of `~/.codex/config.toml` so it does not start in every session.
-Use the `cochrome` function from `aliases` to inject it for one launch:
-
-```sh
-cochrome
-```
-
-Extra Codex arguments still work:
-
-```sh
-cochrome --yolo -m gpt-5.6-sol -c model_reasoning_effort=xhigh
-```
-
 ## Local Per-Project MCP
 
 Put project-only servers in `<repo>/.codex/config.toml`.

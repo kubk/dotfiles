@@ -21,6 +21,13 @@ vim.diagnostic.config({
   severity_sort = true,
 })
 
+-- Extensionless shell files, so they get syntax highlighting.
+vim.filetype.add({
+  filename = {
+    aliases = "sh",
+  },
+})
+
 local lazy_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 vim.opt.rtp:prepend(lazy_path)
 
