@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.egor.codex-autoupdate</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/opt/homebrew/bin/npm</string>
+		<string>install</string>
+		<string>--global</string>
+		<string>--no-audit</string>
+		<string>--no-fund</string>
+		<string>--loglevel=error</string>
+		<string>@openai/codex@latest</string>
+	</array>
+	<key>WorkingDirectory</key>
+	<string>/Users/egor</string>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>CI</key>
+		<string>1</string>
+		<key>NPM_CONFIG_AUDIT</key>
+		<string>false</string>
+		<key>NPM_CONFIG_FUND</key>
+		<string>false</string>
+		<key>NPM_CONFIG_PREFIX</key>
+		<string>/opt/homebrew</string>
+		<key>NPM_CONFIG_UPDATE_NOTIFIER</key>
+		<string>false</string>
+		<key>NPM_CONFIG_YES</key>
+		<string>true</string>
+		<key>PATH</key>
+		<string>/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+	</dict>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StartInterval</key>
+	<integer>43200</integer>
+	<key>ThrottleInterval</key>
+	<integer>3600</integer>
+	<key>ProcessType</key>
+	<string>Background</string>
+	<key>LowPriorityIO</key>
+	<true/>
+	<key>StandardOutPath</key>
+	<string>/Users/egor/.codex/log/codex-autoupdate.log</string>
+	<key>StandardErrorPath</key>
+	<string>/Users/egor/.codex/log/codex-autoupdate.error.log</string>
+</dict>
+</plist>
