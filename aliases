@@ -57,7 +57,7 @@ alias cof='codex --yolo -m gpt-6-astra -c model_reasoning_effort=low'
 alias com='codex --yolo -m gpt-6-astra -c model_reasoning_effort=medium'
 alias comax='codex --yolo -m gpt-6-astra -c model_reasoning_effort=max'
 alias col='codex --yolo -m gpt-5.6-luna -c model_reasoning_effort=max'
-alias col6='codex --yolo -m gpt-6-astra -c model_reasoning_effort=max'
+alias col6='codex --yolo -m gpt-6-luna -c model_reasoning_effort=max'
 alias cor="codex resume --yolo"
 alias update-codex="npm install -g @openai/codex@latest --min-release-age=0"
 
@@ -88,9 +88,8 @@ _deepseek_env() {
   fi
 }
 
-# DeepSeek-backed Codex. Requires the `[model_providers.deepseek]` block +
-# `model_catalog_json` in ~/.codex/config.toml (already wired up). Key is read
-# from DEEP_SEEK_KEY via env_key.
+# DeepSeek-backed Codex. Requires the `[model_providers.deepseek]` block. Key is
+# read from DEEP_SEEK_KEY via env_key; its custom catalog is scoped to _dsx.
 # _dsx <model> <effort> [extra codex args...]
 _dsx() {
   _deepseek_env || return 1
@@ -101,6 +100,7 @@ _dsx() {
   command codex --yolo \
     -m "$model" \
     -c 'model_provider="deepseek"' \
+    -c "model_catalog_json=\"$HOME/.codex/models.json\"" \
     -c "model_reasoning_effort=\"$effort\"" \
     "$@"
 }
