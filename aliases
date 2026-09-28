@@ -67,10 +67,8 @@ alias claude="claude --dangerously-skip-permissions"
 alias ccc="claude --continue"
 alias ccr="claude --resume"
 
-# DeepSeek models routed through Vercel AI Gateway. DeepSeek's current API
-# routes deepseek-flash to V4.1 Flash; the Gateway's catalog uses namespaced IDs.
-DEEPSEEK_PRO=deepseek/deepseek-v4-pro
-DEEPSEEK_FLASH=deepseek/deepseek-v4.1-flash
+# DeepSeek V4.1 Flash through Vercel AI Gateway
+DEEPSEEK_MODEL=deepseek/deepseek-v4.1-flash
 
 _ai_gateway_env() {
   if [ -f "$HOME/projects/dotfiles/.env" ]; then
@@ -101,6 +99,6 @@ _dsx() {
     "$@"
 }
 
-dco()  { _dsx "$DEEPSEEK_PRO" max "$@"; }   # V4 Pro, max effort
-dcom() { _dsx "$DEEPSEEK_PRO" high "$@"; }  # V4 Pro, high effort
-dcof() { _dsx "$DEEPSEEK_FLASH" low "$@"; } # fast — V4.1 Flash, low effort
+dco()  { _dsx "$DEEPSEEK_MODEL" max "$@"; }  # V4.1 Flash, max effort
+dcom() { _dsx "$DEEPSEEK_MODEL" high "$@"; } # V4.1 Flash, high effort
+dcof() { _dsx "$DEEPSEEK_MODEL" low "$@"; }  # V4.1 Flash, low effort
