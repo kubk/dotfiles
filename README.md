@@ -54,7 +54,8 @@ itself.
 - `Space e` → reveal the current file in the tree; from inside the tree, close it
 - `Ctrl+h` → move to the file tree / left window
 - `Ctrl+l` → move to the editor / right window
-- `Space p` → fuzzy-search all project files with `fff` (`.gitignore` is respected)
+- `Space p` → fuzzy-search all project files (`.gitignore` is respected)
+- `Space f g` → search project file contents
 - `gd` or `Ctrl+]` → go to the definition and center it on screen
 - `grr` → show all usages in the quickfix window
 - `Ctrl+o` → jump back

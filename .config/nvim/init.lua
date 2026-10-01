@@ -110,6 +110,13 @@ require("lazy").setup({
         end,
         desc = "Find project files",
       },
+      {
+        "<leader>fg",
+        function()
+          require("fff").live_grep()
+        end,
+        desc = "Search project contents",
+      },
     },
   },
 })
