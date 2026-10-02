@@ -53,19 +53,14 @@ alias n="nvim"
 alias nn="nvim ."
 alias d="pm run dev"
 
-alias co='codex --yolo -m gpt-6-astra -c model_reasoning_effort=xhigh'
-alias cou='codex --yolo -m gpt-6-astra -c model_reasoning_effort=ultra'
-alias cof='codex --yolo -m gpt-6-astra -c model_reasoning_effort=low'
-alias com='codex --yolo -m gpt-6.1-astra -c model_reasoning_effort=medium'
-alias comax='codex --yolo -m gpt-6-astra -c model_reasoning_effort=max'
+alias com='codex --yolo -m gpt-6.1-sol -c model_reasoning_effort=medium'
 alias col='codex --yolo -m gpt-5.6-luna -c model_reasoning_effort=max'
 alias col6='codex --yolo -m gpt-6-luna -c model_reasoning_effort=max'
+
 alias cor="codex resume --yolo"
 alias update-codex="npm install -g @openai/codex@latest --min-release-age=0"
 
 alias claude="claude --dangerously-skip-permissions"
-alias ccc="claude --continue"
-alias ccr="claude --resume"
 
 # DeepSeek V4.1 Flash through Vercel AI Gateway
 DEEPSEEK_MODEL=deepseek/deepseek-v4.1-flash
@@ -99,6 +94,45 @@ _dsx() {
     "$@"
 }
 
-dco()  { _dsx "$DEEPSEEK_MODEL" max "$@"; }  # V4.1 Flash, max effort
-dcom() { _dsx "$DEEPSEEK_MODEL" high "$@"; } # V4.1 Flash, high effort
-dcof() { _dsx "$DEEPSEEK_MODEL" low "$@"; }  # V4.1 Flash, low effort
+gdco()  { _dsx "$DEEPSEEK_MODEL" max "$@"; }  # V4.1 Flash, max effort
+gdcom() { _dsx "$DEEPSEEK_MODEL" high "$@"; } # V4.1 Flash, high effort
+gdcof() { _dsx "$DEEPSEEK_MODEL" low "$@"; }  # V4.1 Flash, low effort
+
+# DeepSeek through OpenRouter, using the same Codex CLI and effort settings
+_openrouter_env() {
+  if [ -f "$HOME/projects/dotfiles/.env" ]; then
+    source "$HOME/projects/dotfiles/.env"
+  else
+    echo "Warning: .env file not found at $HOME/projects/dotfiles/.env"
+    return 1
+  fi
+
+  if [ -z "$OPENROUTER_API_KEY" ]; then
+    echo "Warning: OPENROUTER_API_KEY is not set in $HOME/projects/dotfiles/.env"
+    return 1
+  fi
+}
+
+# _orx <model> <effort> [extra codex args...]
+_orx() {
+  _openrouter_env || return 1
+  local model="$1" effort="$2"
+  shift 2
+  local -a codex_subcommand
+  codex_subcommand=()
+  if [ "${1-}" = "exec" ]; then
+    codex_subcommand=(exec)
+    shift
+  fi
+
+  OPENROUTER_API_KEY="$OPENROUTER_API_KEY" \
+  command codex "${codex_subcommand[@]}" --yolo \
+    -m "$model" \
+    -c 'model_provider="openrouter"' \
+    -c "model_reasoning_effort=\"$effort\"" \
+    "$@"
+}
+
+dco()  { _orx "$DEEPSEEK_MODEL" max "$@"; }  # V4.1 Flash, max effort
+dcom() { _orx "$DEEPSEEK_MODEL" high "$@"; } # V4.1 Flash, high effort
+dcof() { _orx "$DEEPSEEK_MODEL" low "$@"; }  # V4.1 Flash, low effort
