@@ -65,11 +65,12 @@ itself.
 - In insert mode, `Shift+Tab` → move backward through snippet placeholders
 - In insert mode, `Ctrl+Space` → manually open autocomplete or documentation
 
-### Codex skills
+### Codex and Claude skills
 
 - Store custom Codex skills in `~/projects/dotfiles/.codex/skills/<skill-name>`
-- Sync them into Codex with `~/projects/dotfiles/.codex/link-skills.sh`
-- This links custom skills into `~/.codex/skills` without replacing Codex's built-in `.system` skills
+- Sync them with `~/projects/dotfiles/.codex/link-skills.sh`
+- This links custom skills into `~/.codex/skills` (without replacing Codex's built-in `.system` skills) and `~/.claude/skills`
+- In Claude Code, call a skill by its full name, e.g. `/cmux-browser`
 - Current custom skills in this repo: `cmux-browser`, `cloudflare-d1`, `commit`, `commit-push`, `commit-yours`, and `exhaustive-checks`
 
 ### Cmux

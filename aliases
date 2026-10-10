@@ -60,7 +60,10 @@ alias col6='codex --yolo -m gpt-6-luna -c model_reasoning_effort=max'
 alias cor="codex resume --yolo"
 alias update-codex="npm install -g @openai/codex@latest --min-release-age=0"
 
-alias claude="claude --dangerously-skip-permissions"
+alias cl="claude --dangerously-skip-permissions --model claude-sonnet-5-5 --effort medium"
+alias clh="claude --dangerously-skip-permissions --model claude-sonnet-5-5 --effort high"
+alias clf="claude --dangerously-skip-permissions --model claude-sonnet-5-5 --effort low"
+alias clmax="claude --dangerously-skip-permissions --model claude-sonnet-5-5 --effort max"
 
 # DeepSeek V4.1 Flash through Vercel AI Gateway
 DEEPSEEK_MODEL=deepseek/deepseek-v4.1-flash
