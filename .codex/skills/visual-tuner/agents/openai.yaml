@@ -1,0 +1,5 @@
+interface:
+  display_name: "Visual Tuner"
+  short_description: "Tune visually, then apply and clean up"
+policy:
+  allow_implicit_invocation: true
