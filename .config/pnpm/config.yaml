@@ -1,0 +1,4 @@
+minimumReleaseAgeExclude:
+  - slop-police
+  - git-filter
+  - mobx-form-lite

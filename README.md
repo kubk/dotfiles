@@ -32,6 +32,8 @@ ln -s ~/projects/dotfiles/kill-all-mcp.sh ~/.local/bin/kill-all-mcp.sh
 - `ln -s ~/projects/dotfiles/.config/nvim ~/.config/nvim`
 - `brew install --cask hammerspoon`
 - `ln -s ~/projects/dotfiles/.hammerspoon ~/.hammerspoon`
+- `mkdir -p ~/Library/Preferences/pnpm`
+- `ln -s ~/projects/dotfiles/.config/pnpm/config.yaml ~/Library/Preferences/pnpm/config.yaml`
 
 ### Hammerspoon
 
