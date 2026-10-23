@@ -15,27 +15,45 @@ alias пв='git diff'
 alias h='hunk diff'
 alias grep='grep --color'
 
-pm() {
+# Prints the package manager of the nearest project (pnpm or npm), nothing outside one
+_pm_detect() {
   local package_directory="$PWD"
 
   while [ "$package_directory" != "/" ]; do
     if [ -f "$package_directory/pnpm-lock.yaml" ] ||
       { [ -f "$package_directory/package.json" ] && grep -q '"packageManager"[[:space:]]*:[[:space:]]*"pnpm@' "$package_directory/package.json"; }; then
-      command pnpm "$@"
+      echo pnpm
       return
     fi
 
     if [ -f "$package_directory/package-lock.json" ] ||
       { [ -f "$package_directory/package.json" ] && grep -q '"packageManager"[[:space:]]*:[[:space:]]*"npm@' "$package_directory/package.json"; }; then
-      command npm "$@"
+      echo npm
       return
     fi
 
     package_directory=${package_directory%/*}
     [ -n "$package_directory" ] || package_directory="/"
   done
+}
 
-  command npm "$@"
+pm() {
+  if [ "$(_pm_detect)" = "pnpm" ]; then
+    command pnpm "$@"
+  else
+    command npm "$@"
+  fi
+}
+
+# npx replacement: npx in npm projects, otherwise pnpm exec for local bins and pnpm dlx for the rest
+px() {
+  if [ "$(_pm_detect)" = "npm" ]; then
+    command npx "$@"
+  elif [ -x "$(command pnpm bin 2>/dev/null)/$1" ]; then
+    command pnpm exec "$@"
+  else
+    command pnpm dlx "$@"
+  fi
 }
 
 alias tsfe="npm run typecheck -w=frontend"
