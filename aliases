@@ -12,7 +12,6 @@ alias x='exit'
 alias gl='git log --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s" --date=short'
 alias gd='git diff'
 alias пв='git diff'
-alias h='hunk diff'
 alias grep='grep --color'
 
 # Prints the package manager of the nearest project (pnpm or npm), nothing outside one
