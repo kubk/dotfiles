@@ -65,5 +65,5 @@ end)
 mailPasteApplicationWatcher:start()
 updateMailPasteHotkey(hs.application.frontmostApplication())
 
--- Smooth Brain (⌘⌥T): https://flocrivello.com/smooth-brain
+-- Smooth Brain: https://flocrivello.com/smooth-brain
 require("smooth-brain").start({ hotkey = { { "cmd", "alt" }, "t" }, tripleReturn = false })
