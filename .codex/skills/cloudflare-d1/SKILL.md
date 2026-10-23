@@ -7,6 +7,13 @@ description: Use when querying Cloudflare D1, changing a D1/Drizzle schema, gene
 
 Inspect the project's D1 binding, Wrangler configuration, ORM, and migration history before choosing commands. A `.env` filename alone does not tell you whether a command is local or remote.
 
+## CLI
+
+- Use the `cf` CLI (`npx cf`) for remote D1 work: create databases (`cf d1 create`), run queries (`cf d1 query <database-id> --sql`), and apply migrations (`cf d1 migrations apply <database-id> --dir migrations`). Check auth with `cf auth whoami`. It takes database IDs, not binding names. Discover commands with `cf cli search "<task>"`.
+- `cf d1 migrations apply` writes the same `d1_migrations` table as `wrangler d1 migrations apply`, so the two can be mixed on one database.
+- Keep `wrangler` for project-bound tasks: `wrangler dev`, local D1 (`--local`), `wrangler types`, deploys, and package.json/CI scripts that address the database by binding name from `wrangler.jsonc`.
+- `cf` OAuth cannot manage API tokens. Create or edit tokens in the dashboard.
+
 ## TypeScript unions and SQLite constraints
 
 - Do not use SQL `CHECK` constraints to enforce enum or union membership in D1. Changing a constraint later can require rebuilding the table; on tables with foreign-key dependents, rebuilds can cause cascades and data loss.
@@ -19,7 +26,7 @@ Inspect the project's D1 binding, Wrangler configuration, ORM, and migration his
 
 D1 bills `rows_read` per statement: it counts rows read, not rows returned. Aggregation such as `GROUP BY` does not reduce that count.
 
-- Measure representative read-only queries against the intended database with `wrangler d1 execute <db> --remote --command "<sql>" --json`, and inspect `rows_read`.
+- Measure representative read-only queries against the intended database with `cf d1 query <database-id> --sql "<sql>"`, and inspect `rows_read` in each statement's `meta`.
 - Use `EXPLAIN QUERY PLAN` to inspect access patterns and index use. It does not report billed read cost.
 - Consider indexes for columns used in selective `WHERE` filters, and check whether the query plan uses them.
 - Avoid scans and joins against tables that cannot contribute to the requested result. A `JOIN` or `EXISTS` filter can read more rows than a simpler query, so measure query-shape changes instead of assuming they are cheaper.
