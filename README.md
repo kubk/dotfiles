@@ -40,7 +40,7 @@ ln -s ~/projects/dotfiles/kill-all-mcp.sh ~/.local/bin/kill-all-mcp.sh
 - Enable Hammerspoon in **System Settings → Privacy & Security → Accessibility**
 - Enable **Launch Hammerspoon at login** in Hammerspoon settings
 - In Apple Mail, `Cmd+V` pastes text without source formatting while images and files use normal paste
-- A tool to fix typos: http://flocrivello.com/smooth-brain/
+- A tool to fix typos / proofread: http://flocrivello.com/smooth-brain/
 
 ### Neovim
 
@@ -109,6 +109,7 @@ Shortcuts:
   - `Cmd+M` → Cmux
   - `Cmd+I` → ChatGPT
   - `Cmd+O` → Apple Notes
+  - `Cmd+Space` → Task Cracker
 - To set this in Raycast
   - Open settings with `Cmd+,`
   - Go to **Extensions**
