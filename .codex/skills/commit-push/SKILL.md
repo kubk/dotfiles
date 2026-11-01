@@ -9,4 +9,4 @@ Inspect recent commit subjects before writing the new subject.
 
 Do not prefix the commit subject.
 
-Commit the relevant changes and push the current branch.
+Commit the relevant changes and push the current branch. Usually I want to commit everything, even if it wasn't your change
