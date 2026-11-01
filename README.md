@@ -30,6 +30,8 @@ ln -s ~/projects/dotfiles/kill-all-mcp.sh ~/.local/bin/kill-all-mcp.sh
 - `ln -s ~/projects/dotfiles/.vimrc ~/.vimrc`
 - `mkdir -p ~/.config`
 - `ln -s ~/projects/dotfiles/.config/nvim ~/.config/nvim`
+- `mkdir -p ~/.config/git`
+- `ln -s ~/projects/dotfiles/.config/git/ignore ~/.config/git/ignore`
 - `brew install --cask hammerspoon`
 - `ln -s ~/projects/dotfiles/.hammerspoon ~/.hammerspoon`
 - `mkdir -p ~/Library/Preferences/pnpm`
