@@ -75,7 +75,7 @@ itself.
 - Sync them with `~/projects/dotfiles/.codex/link-skills.sh`
 - This links custom skills into `~/.codex/skills` (without replacing Codex's built-in `.system` skills) and `~/.claude/skills`
 - In Claude Code, call a skill by its full name, e.g. `/cmux-browser`
-- Current custom skills in this repo: `cmux-browser`, `cloudflare-d1`, `commit`, `commit-push`, `commit-yours`, and `exhaustive-checks`
+- Current custom skills in this repo: `agent-desktop`, `agent-desktop-macos`, `cmux-browser`, `cloudflare-d1`, `commit`, `commit-push`, `commit-yours`, `computer-use`, and `exhaustive-checks`
 
 ### Cmux
 
