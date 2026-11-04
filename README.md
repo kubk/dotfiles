@@ -34,6 +34,8 @@ ln -s ~/projects/dotfiles/kill-all-mcp.sh ~/.local/bin/kill-all-mcp.sh
 - `ln -s ~/projects/dotfiles/.config/git/ignore ~/.config/git/ignore`
 - `brew install --cask hammerspoon`
 - `ln -s ~/projects/dotfiles/.hammerspoon ~/.hammerspoon`
+- `mkdir -p ~/.config/cmux`
+- `ln -s ~/projects/dotfiles/.config/cmux/cmux.json ~/.config/cmux/cmux.json`
 - `mkdir -p ~/Library/Preferences/pnpm`
 - `ln -s ~/projects/dotfiles/.config/pnpm/config.yaml ~/Library/Preferences/pnpm/config.yaml`
 

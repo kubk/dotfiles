@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/manaflow-ai/cmux/main/web/data/cmux.schema.json",
+  "schemaVersion": 1,
+
+  "shortcuts": {
+    "bindings": {
+      "openDiffViewer": "none"
+    }
+  },
+
+  "actions": {
+    "diff-split": {
+      "type": "command",
+      "title": "Git Diff in Split (with new files)",
+      "keywords": ["diff", "review"],
+      "command": "cmux new-split right --focus true --command \"$HOME/projects/dotfiles/.config/cmux/diff-all.sh\"; exit",
+      "target": "newTabInCurrentPane",
+      "shortcut": "cmd+ctrl+shift+d"
+    }
+  }
+}
