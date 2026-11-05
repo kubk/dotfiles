@@ -11,9 +11,9 @@
   "actions": {
     "diff-split": {
       "type": "command",
-      "title": "Git Diff in Split (with new files)",
+      "title": "Hunk Diff in Split",
       "keywords": ["diff", "review"],
-      "command": "cmux new-split right --focus true --command \"$HOME/projects/dotfiles/.config/cmux/diff-all.sh\"; exit",
+      "command": "cmux new-split right --focus true --command \"hunk diff\"; exit",
       "target": "newTabInCurrentPane",
       "shortcut": "cmd+ctrl+shift+d"
     }
