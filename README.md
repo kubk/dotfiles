@@ -20,12 +20,9 @@ ln -s ~/projects/dotfiles/kill-all-mcp.sh ~/.local/bin/kill-all-mcp.sh
 
 - `npm config set ignore-scripts true --global`
 
-### Load aliases in zsh
-
-- Add `source ~/projects/dotfiles/aliases` to your `~/.zshrc`
-
 ### Set up a new symlinks:
 
+- `ln -s ~/projects/dotfiles/.zshrc ~/.zshrc` (it loads `aliases` itself)
 - `mv ~/.vimrc ~/projects/dotfiles/.vimrc`
 - `ln -s ~/projects/dotfiles/.vimrc ~/.vimrc`
 - `mkdir -p ~/.config`
