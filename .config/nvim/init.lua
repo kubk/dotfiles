@@ -21,6 +21,19 @@ vim.diagnostic.config({
   severity_sort = true,
 })
 
+-- Reload buffers changed on disk by other tools, e.g. coding agents, so the LSP never sees stale code.
+-- The timer covers idle time in Neovim, when no event fires.
+local function reload_changed_buffers()
+  if vim.fn.mode() ~= "c" and vim.fn.getcmdwintype() == "" then
+    vim.cmd("silent! checktime")
+  end
+end
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "TermLeave" }, {
+  group = vim.api.nvim_create_augroup("reload-changed-buffers", { clear = true }),
+  callback = reload_changed_buffers,
+})
+vim.uv.new_timer():start(1000, 1000, vim.schedule_wrap(reload_changed_buffers))
+
 -- Extensionless shell files, so they get syntax highlighting.
 vim.filetype.add({
   filename = {
