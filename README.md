@@ -35,6 +35,9 @@ ln -s ~/projects/dotfiles/kill-all-mcp.sh ~/.local/bin/kill-all-mcp.sh
 - `ln -s ~/projects/dotfiles/.config/cmux/cmux.json ~/.config/cmux/cmux.json`
 - `mkdir -p ~/Library/Preferences/pnpm`
 - `ln -s ~/projects/dotfiles/.config/pnpm/config.yaml ~/Library/Preferences/pnpm/config.yaml`
+- `brew install --cask visual-studio-code`
+- `mkdir -p ~/Library/Application\ Support/Code/User`
+- `ln -sf ~/projects/dotfiles/.config/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json`
 
 ### Hammerspoon
 
