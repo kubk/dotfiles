@@ -2,12 +2,6 @@
     "workbench.colorTheme": "Light Modern",
     "files.autoSave": "afterDelay",
     "editor.minimap.enabled": false,
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
     "explorer.confirmDelete": false,
     "workbench.startupEditor": "none",
     "update.showReleaseNotes": false,
@@ -18,14 +12,12 @@
     "explorer.confirmDragAndDrop": false,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "security.workspace.trust.untrustedFiles": "open",
-    "claudeCode.preferredLocation": "panel",
     "editor.accessibilitySupport": "off",
     "editor.renderRichScreenReaderContent": true,
     "explorer.confirmPasteNative": false,
     "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
     "python.analysis.typeCheckingMode": "basic",
     "terminal.integrated.enableMultiLinePasteWarning": "never",
-    "claudeCode.useTerminal": true,
     "git.openRepositoryInParentFolders": "never",
     "git.blame.editorDecoration.enabled": true
 }
