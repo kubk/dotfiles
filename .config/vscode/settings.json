@@ -4,6 +4,7 @@
     "editor.minimap.enabled": false,
     "explorer.confirmDelete": false,
     "workbench.startupEditor": "none",
+    "window.restoreWindows": "none",
     "update.showReleaseNotes": false,
     "chat.disableAIFeatures": true,
     "workbench.welcomePage.walkthroughs.openOnInstall": false,

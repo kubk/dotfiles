@@ -110,6 +110,7 @@ Shortcuts:
 - Main app shortcuts
   - `Cmd+G` → Google Chrome
   - `Cmd+E` → Telegram
+  - `Cmd+J` → Slack
   - `Cmd+M` → Cmux
   - `Cmd+I` → ChatGPT
   - `Cmd+O` → Apple Notes
