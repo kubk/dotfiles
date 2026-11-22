@@ -113,7 +113,7 @@ Shortcuts:
   - `Cmd+J` → Slack
   - `Cmd+M` → Cmux
   - `Cmd+I` → ChatGPT
-  - `Cmd+O` → Apple Notes
+  - `Cmd+O` → Amp
   - `Cmd+Space` → Task Cracker
 - To set this in Raycast
   - Open settings with `Cmd+,`
