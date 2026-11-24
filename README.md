@@ -113,7 +113,7 @@ Shortcuts:
   - `Cmd+E` → Telegram
   - `Cmd+J` → Slack
   - `Cmd+M` → Cmux
-  - `Cmd+I` → ChatGPT
+  - `Cmd+I` → Notes
   - `Cmd+O` → Amp
   - `Cmd+Space` → Task Cracker
 - To set this in Raycast
