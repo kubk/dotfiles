@@ -38,6 +38,7 @@ ln -s ~/projects/dotfiles/kill-all-mcp.sh ~/.local/bin/kill-all-mcp.sh
 - `brew install --cask visual-studio-code`
 - `mkdir -p ~/Library/Application\ Support/Code/User`
 - `ln -sf ~/projects/dotfiles/.config/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json`
+- `ln -s ~/projects/dotfiles/com.egor.disable-dnd-key.plist ~/Library/LaunchAgents/` (makes the F6 moon key a plain F6 so it can't turn on Do Not Disturb)
 
 ### Hammerspoon
 
